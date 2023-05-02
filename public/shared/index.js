@@ -1,0 +1,10 @@
+export { default as logoImage } from "./logo-picture.svg";
+export { default as activeDiscover } from "./discover_active.png";
+export { default as inactiveDiscover } from "./discover_inactive.png";
+export { default as activeMessages } from "./messages_active.png";
+export { default as inactiveMessages } from "./messages-inactive.png";
+export { default as inactiveProducts } from "./products_inactive.png";
+export { default as inactiveNotifications } from "./notifications_inactive.png";
+export { default as inactiveShop } from "./shop_inactive.png";
+export { default as inactiveMeet } from "./meet_inactive.png";
+export { default as inactiveProfile } from "./profile_inactive.png";
