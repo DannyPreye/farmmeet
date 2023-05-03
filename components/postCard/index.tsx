@@ -81,7 +81,7 @@ const PostCard: FC<PostCardProps> = ({ post }) => {
                 <FaShare className="text-primary cursor-pointer text-[20px]" />
             </div>
             {showComments && (
-                <div className="flex flex-col gap-4 w-full">
+                <div className="flex flex-col gap-4 w-full border-t-[2px] py-3">
                     <form className="flex gap-3 w-full">
                         <div className="w-9 h-9 rounded-full relative overflow-hidden">
                             <Image

@@ -1,6 +1,6 @@
 "use client";
-import { PostCard } from "@/components";
-import { dummyPosts } from "@/lib/constants";
+import { FriendSuggs, PostCard } from "@/components";
+import { dummyFriendSuggestion, dummyPosts } from "@/lib/constants";
 import React from "react";
 import { FiSearch } from "react-icons/fi";
 
@@ -27,7 +27,11 @@ const page = () => {
                     ))}
                 </div>
 
-                <div className="w-[30%] lg:block hidden  sticky right-0 top-[20%]  h-[300px] bg-primary rounded-[20px] "></div>
+                <div className="w-[30%]  h-fit lg:grid gap-[26px] hidden  sticky right-0 top-[20%] py-[39px] px-[11px] bg-primary rounded-[20px] ">
+                    {dummyFriendSuggestion.map((friend) => (
+                        <FriendSuggs friendSuggestion={friend} />
+                    ))}
+                </div>
             </div>
         </div>
     );

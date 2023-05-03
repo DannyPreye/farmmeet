@@ -132,3 +132,46 @@ export const dummyPosts: Post[] = [ {
 }
 
 ];
+
+export const dummyFriendSuggestion = [
+    {
+        name: "green_thumbs",
+        profilePicture: "https://dummyimage.com/100x100/4caf50/ffffff",
+        accountType: "farmer"
+    },
+    {
+        name: "foodie4life",
+        profilePicture: "https://dummyimage.com/100x100/ff9800/ffffff",
+        accountType: "buyer"
+    },
+    {
+        name: "organicfan",
+        profilePicture: "https://dummyimage.com/100x100/9c27b0/ffffff",
+        accountType: "buyer"
+    },
+    {
+        name: "harvest_king",
+        profilePicture: "https://dummyimage.com/100x100/f44336/ffffff",
+        accountType: "farmer"
+    },
+    {
+        name: "market_maven",
+        profilePicture: "https://dummyimage.com/100x100/2196f3/ffffff",
+        accountType: "seller"
+    },
+    {
+        name: "veggie_vibes",
+        profilePicture: "https://dummyimage.com/100x100/009688/ffffff",
+        accountType: "buyer"
+    },
+    {
+        name: "fresh_farms",
+        profilePicture: "https://dummyimage.com/100x100/8bc34a/ffffff",
+        accountType: "seller"
+    },
+    {
+        name: "healthy_harvest",
+        profilePicture: "https://dummyimage.com/100x100/ffeb3b/000000",
+        accountType: "farmer"
+    },
+];

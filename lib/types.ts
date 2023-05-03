@@ -17,3 +17,10 @@ export interface Post
     }[];
 
 }
+
+export interface FriendSuggestion
+{
+    name: string;
+    profilePicture: string;
+    accountType: "Farmer" | "Supplier" | "Seller" | String;
+}
