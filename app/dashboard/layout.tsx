@@ -12,7 +12,7 @@ const layout: NextPage<Props> = ({ children }) => {
         <div className="flex lg:flex-row flex-col  ">
             <Aside />
 
-            <div className=" w-full lg:w-4/5 relative">{children}</div>
+            <div className="  lg:w-4/5 relative">{children}</div>
         </div>
     );
 };
