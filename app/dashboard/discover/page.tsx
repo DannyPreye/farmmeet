@@ -7,7 +7,7 @@ import { FiSearch } from "react-icons/fi";
 const page = () => {
     return (
         <div className="w-full px-5 lg:px-[34px] relative">
-            <div className="flex justify-end z-20 lg:sticky top-0 left-0 item-center bg-white  pt-[48px] pb-[35px]">
+            <div className="flex justify-center lg:justify-end z-20 lg:sticky top-0 left-0 item-center bg-white  pt-[48px] pb-[35px]">
                 <div className="flex gap-3 b w-[80%] px-[23px] py-[9px] max-w-[423px] h-[47px] rounded-[20px] bg-[#F7F5F5]">
                     <FiSearch className="text-[29px] text-primary" />
                     <input

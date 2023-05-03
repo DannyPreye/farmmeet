@@ -76,7 +76,8 @@ export const dummyPosts: Post[] = [ {
         lastName: "Doe",
         "profilePicture": "https://dummyimage.com/100x100/000/fff",
     },
-    "content": "Just finished an amazing hike in the mountains. The views were breathtaking and the fresh air was invigorating!", "media": [ "https://dummyimage.com/500x500/000/fff", "https://dummyimage.com/500x500/111/fff" ],
+    "content": "Just finished an amazing hike in the mountains. The views were breathtaking and the fresh air was invigorating!",
+    "media": [ "https://dummyimage.com/500x500/111/fff" ],
 
     "likes": 25,
     comments: [
@@ -111,7 +112,15 @@ export const dummyPosts: Post[] = [ {
         lastName: "Doe",
         "profilePicture": "https://dummyimage.com/100x100/000/fff",
     },
-    "content": "Just finished an amazing hike in the mountains. The views were breathtaking and the fresh air was invigorating!", "media": [ "https://dummyimage.com/500x500/000/fff", "https://dummyimage.com/500x500/111/fff" ],
+    "content": "Just finished an amazing hike in the mountains. The views were breathtaking and the fresh air was invigorating!",
+    "media": [
+        "https://dummyimage.com/500x500/000/fff",
+        "https://dummyimage.com/400x400/111/fff",
+        "https://dummyimage.com/600x600/111/fff",
+        "https://dummyimage.com/700x700/111/fff",
+        "https://dummyimage.com/800x800/111/fff",
+        "https://dummyimage.com/500x500/111/fff",
+    ],
     "comments": [
         {
             "username": "John Smith",
