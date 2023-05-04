@@ -11,7 +11,7 @@ const Comments: FC<Props> = ({ comments }) => {
     const [isLike, setIsLike] = useState(false);
 
     return (
-        <div className="w-full px-5 py-6 flex flex-col gap-7">
+        <div className="w-full lg:px-5 py-6 flex flex-col gap-7">
             {comments.map((comment) => (
                 <div className="flex gap-2">
                     <div className="h-9 w-9 rounded-full bg-primary"></div>
