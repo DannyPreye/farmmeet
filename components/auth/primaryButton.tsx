@@ -2,14 +2,22 @@ import React, { FC } from "react";
 
 interface Props {
     title: string;
-    onClick: () => void;
+    onClick?: () => void;
     disabled?: boolean | false;
     className?: string;
+    type?: "submit" | "button";
 }
 
-const primaryButton: FC<Props> = ({ title, onClick, disabled, className }) => {
+const primaryButton: FC<Props> = ({
+    title,
+    onClick,
+    disabled,
+    className,
+    type,
+}) => {
     return (
         <button
+            type={type}
             onClick={onClick}
             disabled={disabled}
             className={`w-[80%] text-primary-white

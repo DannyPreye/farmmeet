@@ -2,5 +2,11 @@
 
 module.exports = {
     preset: "ts-jest",
-    testEnvironment: "jsdom",
+    globals: {
+        "ts-jest": {
+            tsconfig: "tsconfig.test.json",
+        },
+    },
+    clearMocks: true,
+    setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
 };

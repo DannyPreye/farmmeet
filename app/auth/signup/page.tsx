@@ -1,5 +1,7 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
+
+import { signupContext } from "@/components/contexts/signUpContext";
 import {
     PrimaryButton,
     SignUpForm1,
@@ -29,6 +31,8 @@ const Pagination = ({
 };
 
 const page = () => {
+    const { signUpFormData, setSignUpFormData } = useContext(signupContext);
+
     const [countries, setCountries] = useState([]);
     const [selectedCountry, setSelectedCountry] = useState<{
         name: string;
@@ -39,26 +43,30 @@ const page = () => {
 
     // Fetch countries from restcountries API
     const fetchCountries = useCallback(async () => {
-        const res = await fetch("https://restcountries.com/v3.1/all");
-        const data = await res.json();
-        const sortCountries = data
-            .map((country: any) => {
-                return {
-                    name: country.name.common,
-                    code: country.cca2,
-                };
-            })
-            .sort((a, b) => a.name.localeCompare(b.name));
-        setCountries(sortCountries);
+        try {
+            const res = await fetch("https://restcountries.com/v3.1/all");
+            const data = await res.json();
+            const sortCountries = data
+                .map((country: any) => {
+                    return {
+                        name: country.name.common,
+                        code: country.cca2,
+                    };
+                })
+                .sort((a: any, b: any) => a.name.localeCompare(b.name));
+            setCountries(sortCountries);
+        } catch (error) {}
     }, []);
 
     const fetchCountryRegion = useCallback(async () => {
-        const res = await fetch(
-            `https://laravel-world.com/api/states?filters%5Bcountry_code%5D=${selectedCountry}&fields=cities`
-        );
-        const data = await res.json();
+        try {
+            const res = await fetch(
+                `https://laravel-world.com/api/states?filters%5Bcountry_code%5D=${selectedCountry}&fields=cities`
+            );
+            const data = await res.json();
 
-        setRegions(data);
+            setRegions(data);
+        } catch (error) {}
     }, [selectedCountry]);
 
     useEffect(() => {
@@ -68,7 +76,6 @@ const page = () => {
     useEffect(() => {
         fetchCountryRegion();
     }, [selectedCountry]);
-
 
     const [activeForm, setActiveForm] = useState(0);
     return (
@@ -83,27 +90,47 @@ const page = () => {
                 ))}
             </div>
             {/*------------- FORMS -------------- */}
-            {activeForm == 0 && <SignUpForm1 />}
-            {activeForm == 1 && <SignUpForm2 />}
+            {activeForm == 0 && (
+                <SignUpForm1
+                    setSignUpFormData={setSignUpFormData}
+                    setActiveForm={setActiveForm}
+                />
+            )}
+            {activeForm == 1 && (
+                <SignUpForm2
+                    setSignUpFormData={setSignUpFormData}
+                    setActiveForm={setActiveForm}
+                />
+            )}
             {activeForm == 2 && (
                 <SignUpForm3
+                    setSignUpFormData={setSignUpFormData}
+                    setActiveForm={setActiveForm}
                     setSelectedCountry={setSelectedCountry}
                     selectedCountry={selectedCountry}
                     countries={countries}
                 />
             )}
-            {activeForm == 3 && <SignUpForm4 />}
+            {activeForm == 3 && (
+                <SignUpForm4
+                    signUpFormData={signUpFormData}
+                    setSignUpFormData={setSignUpFormData}
+                    setActiveForm={setActiveForm}
+                />
+            )}
 
             <div className="grid items-center mt-[20px]">
-                <PrimaryButton
+                {/* <PrimaryButton
                     title="Next"
                     onClick={() => {
                         activeForm < 3 ? setActiveForm(activeForm + 1) : null;
                     }}
-                />
-                <p className=" text-center mt-[20px] font-bold text-primary-white w-fit mx-auto">
+                /> */}
+                <p className=" text-center mt-[20px] font-semibold text-primary-white w-fit mx-auto">
                     Already have an account?{" "}
-                    <Link href={"/auth/login"}>Sign in!</Link>
+                    <Link className="font-bold" href={"/auth/login"}>
+                        Sign in!
+                    </Link>
                 </p>
             </div>
         </div>
