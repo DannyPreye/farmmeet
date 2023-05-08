@@ -7,7 +7,7 @@ import { PrimaryButton } from "@/components/auth";
 describe("The login page", () => {
     it("renders correctly", () => {
         const rootElement = document.createElement("div");
-        render(<PrimaryButton title="Login" />);
+        render(<Login />);
         screen.debug();
     });
 });

@@ -12,13 +12,24 @@ import { Input, PrimaryButton, IconButton } from "@/components/auth";
 
 const server = process.env.NEXT_PUBLIC_BACKEND_SERVER;
 
-const page = () => {
+// async function getDatafrom() {
+//     const res = await axios.get(`${server}/category`);
+
+//     return res.data;
+// }
+
+const page = async () => {
     const router = useRouter();
+
+    // const category = await getDatafrom();
+
+    // console.log(category);
+
     const initialValues = {
         email: "",
         password: "",
     };
-    console.log(server);
+
     const validationSchema = Yup.object({
         email: Yup.string()
             .email("Invalid email address")
@@ -36,7 +47,7 @@ const page = () => {
         const { email, password } = values;
         try {
             const response = await toast.promise(
-                axios.post(`${server}/auth/login`, {
+                axios.post(`/api/auth`, {
                     email,
                     password,
                 }),

@@ -37,7 +37,7 @@ const page = () => {
     const [selectedCountry, setSelectedCountry] = useState<{
         name: string;
         code: string;
-    } | null>(countries[0]);
+    } | null>();
     const [regions, setRegions] = useState([]);
     const [selectedRegion, setSelectedRegion] = useState<{} | null>(null);
 

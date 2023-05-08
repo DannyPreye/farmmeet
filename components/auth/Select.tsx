@@ -29,7 +29,7 @@ const Select: FC<Props> = ({
                 onBlur={onBlur}
                 onChange={onChange}
                 id="select"
-                value={value}
+                value={value || defaultValue}
                 // defaultValue={defaultValue}
                 className={`w-full px-[22px] relative font-bold appearance-none text-[#B6B1B1] focus:border-none focus:outline-none py-[12px] mx-auto  h-[55px] rounded-[17px] bg-secondary-white ${
                     error ? "border-2 border-red-500" : "border-none"
