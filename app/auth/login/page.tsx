@@ -19,7 +19,7 @@ const server = process.env.NEXT_PUBLIC_BACKEND_SERVER;
 // }
 
 const page = async () => {
-    const router = useRouter();
+    // const router = useRouter();
 
     // const category = await getDatafrom();
 
@@ -59,7 +59,8 @@ const page = async () => {
             );
             if (response.data.success) {
                 toast.success(response.data.message);
-                router.push("/dashboard/discover");
+
+                // router.push("/dashboard/discover");
             }
         } catch (error: any) {
             toast.error(error.message);
