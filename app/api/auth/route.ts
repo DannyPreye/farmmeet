@@ -23,12 +23,13 @@ export async function POST(request: Request,)
 
     if (res.data.token) {
       const { token } = res.data;
+      const oneDayInSeconds = 24 * 60 * 60; // One day in seconds
 
       return new Response(JSON.stringify({ success: true, token }), {
         status: 200,
         headers: {
           "Content-Type": "application/json",
-          "Set-Cookie": serialize("token", token, { path: "/", httpOnly: true })
+          "Set-Cookie": serialize("token", token, { path: "/", httpOnly: true, expires: new Date(Date.now() + oneDayInSeconds * 1000) })
         }
       });
     }

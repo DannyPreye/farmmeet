@@ -1,8 +1,11 @@
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import { Inter } from "next/font/google";
+import { Inter, Nunito, Montserrat } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const nunito = Nunito({ subsets: ["latin"], variable: "--nunito" });
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--montserrat" });
 
 export const metadata = {
     title: "FarmMeet",
@@ -17,7 +20,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body className="font-nunito">{children}</body>
         </html>
     );
 }

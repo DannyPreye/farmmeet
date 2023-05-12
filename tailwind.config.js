@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
     content: [
         "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -18,6 +19,10 @@ module.exports = {
                 "secondary-green": "#049D3E",
                 "primary-white": "#FFFCFC",
                 "primary-grey": "#5F6368",
+            },
+            fontFamily: {
+                nunito: ["var(--nunito)", ...fontFamily.sans],
+                montserrat: ["var(--montserrat)", ...fontFamily.sans],
             },
         },
     },
